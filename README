@@ -1,0 +1,2 @@
+1. Faça o download do vídeo "Creating a weblog in 15 minutes with Rails 2" em http://rubyonrails.org/screencasts. O arquivo original tem o nome "rails_blog_2.mov".
+2. Coloque a legenda no mesmo diretorio do vídeo. O nome da legenda deve ser igual ao do vídeo, por exemplo, se o nome do vídeo está "criando_blog_rails.mov", a legenda deve ficar "criando_blog_rails.srt".

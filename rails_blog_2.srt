@@ -52,7 +52,7 @@ EntÃ£o podemos ir na url de Posts no browser e ver o que o esquema gerou.
 
 14
 00:01:02,229 --> 00:01:03,692
-Como voçê ver, aqui podemos cria novos Posts
+Como podemos ver aqui, podemos cria novos Posts
 
 15
 00:01:07,034 --> 00:01:09,474
@@ -64,7 +64,7 @@ Se formos para nosso modelo de "Post", podemos adicionar algumas validações aqui
 
 17
 00:01:20,362 --> 00:01:24,100
-Vamos ter certeza que tenhamos um título e um corpo.
+Vamos ter certeza que tenhamos um corpo e um título.
 
 18
 00:01:25,000 --> 00:01:28,050
@@ -107,6 +107,42 @@ mas eu quero que os posts sejam parecidos então o podemos fazer é mover esse ped
 e colocá-lo num "partial" pra exibir em vários templates.
 
 28
-00:02:03,281 --> 00:02:04,281
+00:02:04,281 --> 00:02:09,681
+Para criar um "partial" so precisamos criar um arquivo aqui, começando com <i>undescore</i>, vamos chama-lo de "Post"
+
+29
+00:02:10,612 --> 00:02:12,934
+então e copiar aquele conteúdo aqui.
+
+30
+00:02:13,034 --> 00:02:20,034
+Em vez de acessar por variável de instancia, vamos acessar por variável local "post" que estará disponível para nós neste <i>partial</i>.
+
+31
+00:02:20,134 --> 00:02:25,221
+De volta ao nosso template "show", vamos exibir o <i>partial</i>. Se passarmos nosso "Post" pra ele, Rails é esperto o bastante
+
+32
+00:02:25,234 --> 00:02:28,234
+para fazer o link pois chamamos nosso <i>partial</i> de "post".
+
+33
+00:02:28,654 --> 00:02:31,138
+Vamos exibir esse <i>partial</i> também na nossa index.
+
+34
+00:02:31,238 --> 00:02:35,921
+Em vez de lista uma tabela aqui, vamos chamar <i>partial</i> Posts.
+
+35
+00:02:36,021 --> 00:02:40,540
+Para cada Post na lista de Posts, será exibido o <i>partial</i>.
+
+36
+00:02:40,937 --> 00:02:47,467
+Se voltarmos para nosso browser e recarregar, ai está, muito mais bonito. Ainda poderiamos fazer muita coisa aqui mas vamos adiante.
+
+37
+00:02:46,796 --> 00:02:47,796
 
 

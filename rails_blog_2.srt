@@ -4,7 +4,7 @@ Bem vindo. Nesse screencast de 15 minutos vamos criar um blog em Ruby on Rails.
 
 2
 00:00:04,969 --> 00:00:10,936
-Vamos comeÃ§ar com o comando "rails" passando "blog" pra ele e isso vai gerar os arquivos necessarios pra a aplicaÃ§Ã£o inicial em Rails.
+Vamos começar com o comando "rails" passando "blog" pra ele e isso vai gerar os arquivos necessarios pra a aplicaÃ§Ã£o inicial em Rails.
 
 3
 00:00:11,600 --> 00:00:14,117
@@ -49,4 +49,64 @@ Podemos iniciar nosso servidor.
 13
 00:00:58,189 --> 00:01:00,975
 EntÃ£o podemos ir na url de Posts no browser e ver o que o esquema gerou.
+
+14
+00:01:02,229 --> 00:01:03,692
+Como voçê ver, aqui podemos cria novos Posts
+
+15
+00:01:07,034 --> 00:01:09,474
+e ainda edita-los.
+
+16
+00:01:16,000 --> 00:01:19,000
+Se formos para nosso modelo de "Post", podemos adicionar algumas validações aqui.
+
+17
+00:01:20,362 --> 00:01:24,100
+Vamos ter certeza que tenhamos um título e um corpo.
+
+18
+00:01:25,000 --> 00:01:28,050
+Vamos ver o que acontece se editarmos nosso post
+
+19
+00:01:28,150 --> 00:01:29,150
+e remover o título
+
+20
+00:01:29,250 --> 00:01:33,460
+ai está, ele diz "Título não pode ser vazio". Coloco de volta e funciona.
+
+21
+00:01:34,400 --> 00:01:38,560
+Seria legal se nossa pagina fosse um pouco mais apresentável, especiamente a pagina que lista todos os posts.
+
+22
+00:01:38,660 --> 00:01:41,099
+Então vamos voltar para nosso código e ver o que podemos fazer.
+
+23
+00:01:41,199 --> 00:01:45,600
+Vou começar com o arquivo "show" de Posts e em vez de fazer isso aqui
+
+24
+00:01:45,700 --> 00:01:50,944
+vou colar um código pra exibir o post e alguns links.
+
+25
+00:01:51,543 --> 00:01:56,494
+Agora temos que fazer algo parecido no nosso index também ou vamos exibir muitos posts
+
+26
+00:01:56,540 --> 00:02:00,650
+mas eu quero que os posts sejam parecidos então o podemos fazer é mover esse pedaço de código
+
+27
+00:02:00,660 --> 00:02:03,181
+e colocá-lo num "partial" pra exibir em vários templates.
+
+28
+00:02:03,281 --> 00:02:04,281
+
 

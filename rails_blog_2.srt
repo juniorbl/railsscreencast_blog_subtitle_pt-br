@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:04,969
+Bem vindo. Nesse screencast de 15 minutos vamos criar um blog em Ruby on Rails.
+
+2
+00:00:04,969 --> 00:00:10,936
+Vamos começar com o comando "rails" passando "blog" pra ele e isso vai gerar os arquivos necessarios pra a aplicação inicial em Rails.
+
+3
+00:00:11,600 --> 00:00:14,117
+Então podemos ir lá e iniciar nosso servidor.
+
+4
+00:00:15,400 --> 00:00:20,340
+Agora podemos ver se tudo está funcionando até aqui apontando nosso browser para localhost, porta 3000.
+
+5
+00:00:21,069 --> 00:00:22,956
+Ai está, parece que deu tudo certo.
+
+6
+00:00:23,367 --> 00:00:25,774
+Nessa aplicação queremos ter "posts".
+
+7
+00:00:26,586 --> 00:00:33,000
+Podemos usar o comando "script/generate" para criar o modelo de "Post" e o controle pra gerencia-lo.
+
+8
+00:00:33,134 --> 00:00:36,850
+Esse vai ter um título e um corpo.
+
+9
+00:00:40,025 --> 00:00:45,069
+Um dos arquivos que foi gerado aqui é o arquivo "migration" e ele é um jeito fácil de administrar seu esquema de banco de dados.
+
+10
+00:00:45,169 --> 00:00:48,018
+Então aqui estamos criando uma tabela para "Posts" com algumas colunas.
+
+11
+00:00:48,118 --> 00:00:54,454
+Agora podemos executar aquela "migration" com o comando "rake db:migrate" e isso vai cria a tabela de "Posts".
+
+12
+00:00:54,554 --> 00:00:55,611
+Podemos iniciar nosso servidor.
+
+13
+00:00:58,189 --> 00:01:00,975
+Então podemos ir na url de Posts no browser e ver o que o esquema gerou.
+

@@ -24,7 +24,7 @@ Nessa aplicação queremos ter "posts".
 
 7
 00:00:26,586 --> 00:00:33,000
-Podemos usar o comando "script/generate scaffol" para criar o modelo de "Post" e o controle pra gerencia-lo.dddddddddddd
+Podemos usar o comando "script/generate scaffold" para criar o modelo de "Post" e o controle pra gerencia-lo.
 
 8
 00:00:33,134 --> 00:00:36,850

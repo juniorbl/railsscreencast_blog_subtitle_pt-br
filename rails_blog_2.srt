@@ -24,7 +24,7 @@ Nessa aplicaÃ§Ã£o queremos ter "posts".
 
 7
 00:00:26,586 --> 00:00:33,000
-Podemos usar o comando "script/generate" para criar o modelo de "Post" e o controle pra gerencia-lo.
+Podemos usar o comando "script/generate scaffol" para criar o modelo de "Post" e o controle pra gerencia-lo.dddddddddddd
 
 8
 00:00:33,134 --> 00:00:36,850
@@ -143,6 +143,30 @@ Para cada Post na lista de Posts, será exibido o <i>partial</i>.
 Se voltarmos para nosso browser e recarregar, ai está, muito mais bonito. Ainda poderiamos fazer muita coisa aqui mas vamos adiante.
 
 37
-00:02:46,796 --> 00:02:47,796
+00:02:47,694 --> 00:02:54,241
+Até aqui só usamos a representação HTML dos nossos Posts mas se queremos interagir com nossa aplicação em outros modos?
+
+38
+00:02:54,785 --> 00:02:58,085
+Tudo que temos que fazer é adicionar uma extensão a nossa URL, então se chamarmos "post.xml"
+
+39
+00:02:58,186 --> 00:03:04,050
+receberemos a representaçao XML dos nossos posts e poderemos usar XML pra gerenciar um post completamente.
+
+40
+00:03:05,991 --> 00:03:11,587
+Se olharmos nosso controler de Posts podemos ver como isso funciona. É somente um bloco "respond_to" que lista os formatos que aceitamos,
+
+41
+00:03:11,687 --> 00:03:15,906
+sendo assim é muito facil adicionar mais com somente uma linha. Então aqui adicionamos "json",
+
+42
+00:03:16,789 --> 00:03:22,517
+agora é chamar com a extensão "json", aí está, nosso Post em formato JSON.
+
+43
+00:03:22,617 --> 00:03:23,617
 
 

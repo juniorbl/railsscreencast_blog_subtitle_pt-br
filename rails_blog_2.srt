@@ -167,6 +167,30 @@ sendo assim é muito facil adicionar mais com somente uma linha. Então aqui adici
 agora é chamar com a extensão "json", aí está, nosso Post em formato JSON.
 
 43
-00:03:22,617 --> 00:03:23,617
+00:03:23,430 --> 00:03:27,470
+Que tipo de blog é esse que não tem nenhum tipo "feed"? Então vamos adicionar um feed
+
+44
+00:03:27,314 --> 00:03:31,314
+fazendo com que ele responda ao formato "atom". Se deixarmos assim será mostrado sem um arquivo,
+
+45
+00:03:31,414 --> 00:03:39,057
+então assim como o html é mostrado em uma versão html do arquivo, vamos fazer uma visão do index pra "atom".
+
+46
+00:03:39,776 --> 00:03:43,910
+Então vamos criar um novo arquivo, vamos chama-lo de "index" que é o nome de nossa ação,
+
+47
+00:03:43,910 --> 00:03:49,931
+"atom" que é o formato, e qualquer linguagem de template, poderiamos usar "erb" aqui
+
+48
+00:03:49,552 --> 00:03:53,599
+mas vamos usar "builder" por que é muito bom para montar arquivos XML.
+
+49
+00:03:50,040 --> 00:03:54,699
 
 

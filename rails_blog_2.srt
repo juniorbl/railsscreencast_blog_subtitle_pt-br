@@ -191,6 +191,90 @@ Então vamos criar um novo arquivo, vamos chama-lo de "index" que é o nome de nos
 mas vamos usar "builder" por que é muito bom para montar arquivos XML.
 
 49
-00:03:50,040 --> 00:03:54,699
+00:03:53,685 --> 00:03:59,119
+Deixe-me adicionar um pouco de código aqui pra gerar o feed. Basicamente ele percorre todos os posts
+
+50
+00:03:59,120 --> 00:04:01,668
+e faz uma nova entrada do feed para cada um.
+
+51
+00:04:01,859 --> 00:04:07,080
+Se chamarmos nossa url de posts novamente com a extensão "atom", ai está, nosso atom feed.
+
+52
+00:04:08,360 --> 00:04:13,143
+Podemos ir agora para o nosso arquivo de layout de post e dentro do HEAD vamo adicionar um código
+
+53
+00:04:13,243 --> 00:04:19,394
+chamado "auto_discovery_link_tag" para criar um link com o nosso feed.
+
+54
+00:04:19,877 --> 00:04:26,843
+Se recarregarmos nosso site novamente, agora temos um link RSS aqui onde nos leva ao nosso feed de ATOM.
+
+55
+00:04:26,943 --> 00:04:28,933
+Muito legal.
+
+56
+00:04:29,033 --> 00:04:32,001
+Mas se alguem vier aqui e editar no nosso post pode inserir coisas ofensivas,
+
+57
+00:04:32,200 --> 00:04:35,896
+nós não queremos isso então vamos proteger nos proteger com uma autenticação básica.
+
+58
+00:04:36,696 --> 00:04:41,147
+De volta ao nosso controller de posts, podemos inserir comportamento usando "before_filter",
+
+59
+00:04:41,247 --> 00:04:42,447
+vamos chama-lo de "authenticate".
+
+60
+00:04:43,933 --> 00:04:47,764
+Isso é quando queremos mudar um comportamento quando uma dada ação é chamada.
+
+61
+00:04:47,864 --> 00:04:55,102
+Então queremos que tudo seja autenticado menos as ações "index" e "show".
+
+62
+00:04:55,202 --> 00:05:02,927
+Podemos adicionar o método de autenticação aqui embaixo, vamos fazê-lo privado, ele não é uma ação pública
+
+63
+00:05:03,027 --> 00:05:05,027
+e vamos chama-lo de "authenticate".
+
+64
+00:05:05,127 --> 00:05:09,986
+E aqui dentro podemos inserir um código para fazer autenticação HTTP básica,
+
+65
+00:05:10,086 --> 00:05:13,330
+so pra garantir que o usuário é "admin" e a senha é "secret".
+
+66
+00:05:13,430 --> 00:05:17,741
+Se isso falhar o usuário não poderá continuar com a ação.
+
+67
+00:05:17,841 --> 00:05:22,757
+Se tentarmos editar esse post novamente, receberemos uma caixa de autenticação, informo os dados
+
+68
+00:05:22,857 --> 00:05:26,001
+e aí esta, agora podemos continuar.
+
+69
+00:05:26,101 --> 00:05:31,440
+Vamos tentar editar e ver se funciona, aí está, somente administradores podem editar.
+
+70
+00:05:31,540 --> 00:05:32,540
 
 

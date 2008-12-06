@@ -275,6 +275,54 @@ e aí esta, agora podemos continuar.
 Vamos tentar editar e ver se funciona, aí está, somente administradores podem editar.
 
 70
-00:05:31,540 --> 00:05:32,540
+00:05:31,540 --> 00:05:35,040
+Não seria legal se outros podessem adicionar comentários a esse post?
+
+71
+00:05:35,140 --> 00:05:40,427
+Novamente vamos usar o comando "script/generate scaffold" para gerar um modelo e controle de Comentario.
+
+72
+00:05:40,527 --> 00:05:48,481
+E vamos da-lo uma coluna chamada "post_id" que será usado pra determinar a que post o comentário pertence,
+
+73
+00:05:48,581 --> 00:05:51,341
+e podemos da-lo um corpo pra o texto.
+
+74
+00:05:51,441 --> 00:05:56,495
+Não esqueça de executar a migração com o comando "rake db:migrate" pra gerar a tabela de comentário.
+
+75
+00:05:56,595 --> 00:06:00,791
+Agora temos dois modelos, Comentario e Post, e eles precisam ser associados.
+
+76
+00:06:00,891 --> 00:06:04,367
+Se fomos no nosso Post podemos dizer que ele tem muitos comentários (has_many: comments)
+
+77
+00:06:04,467 --> 00:06:09,429
+e em Comentario dizer que ele pertence a um Post (belongs_to: Post).
+
+78
+00:06:09,529 --> 00:06:14,653
+Agora usamos aquela coluna "post_id" em Comentario para liga-los.
+
+79
+00:06:14,753 --> 00:06:20,412
+Podemos também fazer essa associação no nosso arquivo de rotas, informando que Posts tem muitos Comentarios.
+
+80
+00:06:24,387 --> 00:06:30,629
+O que isso faz é adicionar comentario dentro de nosso url de post, que podemos ver se chamarmos o comando "rake routes".
+
+81
+00:06:31,465 --> 00:06:37,781
+É um pouco difícil de ver nessa tela pequena mas você pode ver que temos posts e então temos comentarios na url de posts.
+
+82
+00:06:37,881 --> 00:06:38,881
 
 

@@ -618,3 +618,147 @@ Funcionou, ele recarregou a página, de volta ao velho formato HTML onde ele reca
 00:12:43,225 --> 00:12:45,725
 Então ele funciona com ou sem javascript habilitado.
 
+156
+00:12:45,775 --> 00:12:49,475
+Testar esses comportamentos constantemente é um pouco chato,
+
+157
+00:12:49,725 --> 00:12:55,125
+toda vez que você fizer uma modificação no futuro no seu blog pra ter certeza que funciona com ou sem javascript.
+
+158
+00:12:55,375 --> 00:13:01,375
+Rails encoraja você a adicionar testes automatizados na aplicação usando código.
+
+159
+00:13:01,925 --> 00:13:05,225
+Se formos na nossa aplicação podemos ver que temos aqui um diretório de testes aqui
+
+160
+00:13:05,475 --> 00:13:08,575
+que é gerado pelo Rails para toda aplicação.
+
+161
+00:13:08,825 --> 00:13:12,325
+Nós ja temos alguns testes aqui criados pelo comando "scaffold".
+
+162
+00:13:12,775 --> 00:13:19,275
+Vamos ao nosso controller de Comentario por exemplo e testar nossa ação "create" com ou sem javascript.
+
+163
+00:13:16,325 --> 00:13:23,325
+Mas já existem muitas ações que são testadas aqui que, você se lembra, nós removemos.
+
+164
+00:13:23,575 --> 00:13:26,975
+Então vamos apagas todos elas e adicionar nós mesmos.
+
+165
+00:13:27,725 --> 00:13:31,625
+Vamos ter alguma coisa parecida com isso: temos 2 teses aqui.
+
+166
+00:13:31,875 --> 00:13:39,675
+Um para testar uma requisição normal HTML que nos redirecionamos depois de criar um comentário no post
+
+167
+00:13:39,925 --> 00:13:46,325
+e outra para garantir que ele exibirá o template RJS quando fazemos uma requisição javascript.
+
+168
+00:13:46,575 --> 00:13:50,075
+Ainda existem alguns testes que precisamos consertar no nosso controller de Post
+
+169
+00:13:50,325 --> 00:13:54,525
+mas por enquanto vou comentar isso então podemos ver depois.
+
+170
+00:13:54,775 --> 00:13:58,475
+Nesse momento quero focar o controller de Comentario.
+
+171
+00:13:58,725 --> 00:14:01,225
+Agora podemos executar o comando "rake test:functionals"
+
+172
+00:14:03,175 --> 00:14:06,875
+para rodar nosso novos testes do controller que acabamos de adicionar.
+
+173
+00:14:07,125 --> 00:14:13,525
+Temos 2 pontos aqui que significa que os 2 testes passaram e nosso controller de Comentario está funcionando corretamente.
+
+174
+00:14:14,475 --> 00:14:19,275
+Só para mostrar o que acontece quando nosso teste falha, vou renomear isso para algo incorreto.
+
+175
+00:14:19,625 --> 00:14:21,625
+Agora vamos tentar rodar nossos testes novamente
+
+176
+00:14:22,375 --> 00:14:27,975
+e como pode ver temos 2 falhas pois eu mudei a aplicação e ela não funciona corretamente.
+
+177
+00:14:28,225 --> 00:14:33,125
+Como você pode ver testes automatizados é um jeito legal para não ter que ir no browser toda vez
+
+178
+00:14:33,275 --> 00:14:37,975
+que fizer uma mudança e testar todas as páginas novamente para garantir que tudo funciona.
+
+179
+00:14:38,525 --> 00:14:43,325
+Gostaria de concluir esse screencast mostando uma caracteristica "matadora" chamada "console".
+
+180
+00:14:44,275 --> 00:14:49,775
+O que isso faz é carregar todo o seu ambiente Rails e te dar o IRB
+
+181
+00:14:49,825 --> 00:14:54,425
+onde você pode digitar qualquer código que quiser, mudar um comportamento e ter um retorno instantâneo.
+
+182
+00:14:54,675 --> 00:14:59,075
+Digamos que eu busque um post e
+
+183
+00:14:59,325 --> 00:15:01,125
+vamos mudar o título por exemplo.
+
+184
+00:15:04,575 --> 00:15:05,775
+e salva-lo.
+
+185
+00:15:06,825 --> 00:15:11,425
+Se recarregarmos nossa pagina de post podemos ver que o título mudou.
+
+186
+00:15:11,975 --> 00:15:15,875
+É um exelente modo de interagir com Rails instantaneamente via Ruby.
+
+187
+00:15:15,925 --> 00:15:20,925
+Como pode ver Rails torna fácil fazer uma aplicação completa em pouco tempo.
+
+188
+00:15:21,075 --> 00:15:25,375
+Fizemos aqui um blog com alguns posts, um RSS feed,
+
+189
+00:15:25,625 --> 00:15:27,725
+alguns comentários usando AJAX
+
+190
+00:15:27,975 --> 00:15:31,375
+e ainda tivemos tempo para alguns testes automatizados.
+
+191
+00:15:32,025 --> 00:15:36,468
+Eu espero que tenha achado esse screencast útil e encorajo você a dar uma olhada em Rails você mesmo.
+

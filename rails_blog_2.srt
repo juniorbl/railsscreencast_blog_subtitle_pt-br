@@ -276,7 +276,7 @@ Vamos tentar editar e ver se funciona, aí está, somente administradores podem ed
 
 70
 00:05:31,540 --> 00:05:35,040
-Não seria legal se outros podessem adicionar comentários a esse post?
+Não seria legal se outros pudessem adicionar comentários a esse post?
 
 71
 00:05:35,140 --> 00:05:40,427
@@ -323,6 +323,62 @@ O que isso faz é adicionar comentario dentro de nosso url de post, que podemos v
 É um pouco difícil de ver nessa tela pequena mas você pode ver que temos posts e então temos comentarios na url de posts.
 
 82
-00:06:37,881 --> 00:06:38,881
+00:06:38,942 --> 00:06:43,670
+Para uma dada página de post nós queremos listar todos os comentários daquele post
+
+83
+00:06:43,680 --> 00:06:46,720
+e ter um formulário para enviar novos comentários.
+
+84
+00:06:47,301 --> 00:06:51,271
+Se formos em view/posts/show que é onde queremos listar os comentários,
+
+85
+00:06:52,271 --> 00:07:03,810
+vamos colocar "Comentários" aqui, uma DIV, id "comentarios" e vamos mostar um "partial"
+
+86
+00:07:05,482 --> 00:07:10,535
+de "post.comments". Esse ".comments" nos foi dado quando dissemos que post tem muitos comentarios no modelo de post.
+
+87
+00:07:10,635 --> 00:07:16,535
+Basta chamar "post.comments" para referencia-los.
+
+88
+00:07:16,635 --> 00:07:19,948
+Agora podemos criar aquele "partial" para os comentários quase do mesmo modo que fizemos com o de Post.
+
+89
+00:07:20,048 --> 00:07:22,048
+Vamos chama-lo de "comment"
+
+90
+00:07:24,244 --> 00:07:29,282
+vou colar um código aqui basicamente pra exibir o conteúdo do comentário.
+
+91
+00:07:30,282 --> 00:07:34,275
+De volta a nossa página "show" de Post, nós também queremos um formulário aqui para submeter um novo comentário.
+
+92
+00:07:34,375 --> 00:07:44,515
+então vou colar ele aqui. Isso cria um novo formulário para um comentário dentro de um Post e exibe o campo para o corpo.
+
+93
+00:07:44,745 --> 00:07:49,832
+Se voltarmos para nossa página do Post no browser, podemos recarregar e aí está, aqui estão os comentários, irá lista os comentários
+
+94
+00:07:49,932 --> 00:07:55,103
+mas tem nenhum agora para este post e um formulário para submeter um novo comentário.
+
+95
+00:07:55,203 --> 00:07:59,074
+O formulário não funciona ainda por que temos que configurar nosso controller de Comentario.
+
+96
+00:07:59,174 --> 00:08:00,174
 
 

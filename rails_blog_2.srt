@@ -379,6 +379,50 @@ mas tem nenhum agora para este post e um formulário para submeter um novo coment
 O formulário não funciona ainda por que temos que configurar nosso controller de Comentario.
 
 96
-00:07:59,174 --> 00:08:00,174
+00:07:59,174 --> 00:08:04,064
+Vamos ao nosso controller de Comentario e podemos ver que "scaffold" já gerou algumas ações pra nós aqui
+
+97
+00:08:04,065 --> 00:08:08,269
+mas so temos interesse em fazer uma coisa com comentários que é cria-los.
+
+98
+00:08:08,369 --> 00:08:13,772
+Então vou apagar tudo isso e recriar fazendo uma ação chamada "create" aqui.
+
+99
+00:08:14,515 --> 00:08:17,394
+Aqui eu quero fazer três coisas: primeira é achar meu Post,
+
+100
+00:08:19,043 --> 00:08:20,738
+com meu parametro "post_id",
+
+101
+00:08:20,838 --> 00:08:29,840
+e é nele que vou contruir meu comentário, então posso chamar "post.comments.build" para adicionar um novo comentário para este post
+
+102
+00:08:29,940 --> 00:08:37,990
+usando o paramentro de comentário, que é o hash que o formulário envia, isso vai adicionar o corpo do nosso comentário.
+
+103
+00:08:35,072 --> 00:08:42,704
+E finalmente redirecionar para nossa página de post.
+
+104
+00:08:42,804 --> 00:08:45,908
+Agora podemos testar, vamos criar um comentário,
+
+105
+00:08:47,008 --> 00:08:52,897
+submeter isso e parece que submeteu o formulário mas não tem nenhum comentário listado aqui,
+
+106
+00:08:52,997 --> 00:08:56,891
+alguma coisa não está funcionando. Provavelmente não está sendo salvo no banco de dados.
+
+107
+00:08:56,991 --> 00:08:57,991
 
 

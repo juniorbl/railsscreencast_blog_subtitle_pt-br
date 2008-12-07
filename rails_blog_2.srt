@@ -108,7 +108,7 @@ e colocá-lo num "partial" pra exibir em vários templates.
 
 28
 00:02:04,281 --> 00:02:09,681
-Para criar um "partial" so precisamos criar um arquivo aqui, começando com <i>undescore</i>, vamos chama-lo de "Post"
+<i>Para criar um "partial" so precisamos criar um arquivo aqui, começando com undescore, vamos chama-lo de "Post"</i>
 
 29
 00:02:10,612 --> 00:02:12,934
@@ -116,27 +116,27 @@ então e copiar aquele conteúdo aqui.
 
 30
 00:02:13,034 --> 00:02:20,034
-Em vez de acessar por variável de instancia, vamos acessar por variável local "post" que estará disponível para nós neste <i>partial</i>.
+<i>Em vez de acessar por variável de instancia, vamos acessar por variável local "post" que estará disponível para nós neste partial.</i>
 
 31
 00:02:20,134 --> 00:02:25,221
-De volta ao nosso template "show", vamos exibir o <i>partial</i>. Se passarmos nosso "Post" pra ele, Rails é esperto o bastante
+<i>De volta ao nosso template "show", vamos exibir o partial. Se passarmos nosso "Post" pra ele, Rails é esperto o bastante</i>
 
 32
 00:02:25,234 --> 00:02:28,234
-para fazer o link pois chamamos nosso <i>partial</i> de "post".
+<i>para fazer o link pois chamamos nosso partial de "post".</i>
 
 33
 00:02:28,654 --> 00:02:31,138
-Vamos exibir esse <i>partial</i> também na nossa index.
+<i>Vamos exibir esse partial também na nossa index.</i>
 
 34
 00:02:31,238 --> 00:02:35,921
-Em vez de lista uma tabela aqui, vamos chamar <i>partial</i> Posts.
+<i>Em vez de lista uma tabela aqui, vamos chamar partial Posts.</i>
 
 35
 00:02:36,021 --> 00:02:40,540
-Para cada Post na lista de Posts, será exibido o <i>partial</i>.
+<i>Para cada Post na lista de Posts, será exibido o partial.</i>
 
 36
 00:02:40,937 --> 00:02:47,467
@@ -423,6 +423,90 @@ submeter isso e parece que submeteu o formulário mas não tem nenhum comentário l
 alguma coisa não está funcionando. Provavelmente não está sendo salvo no banco de dados.
 
 107
-00:08:56,991 --> 00:08:57,991
+00:08:57,216 --> 00:09:01,903
+Esse é um bom momento pra mostrar nossa opção de debug no rails. Vamos voltar para nosso controller de Comentario,
 
+108
+00:09:02,002 --> 00:09:09,314
+adicionar a linha "debugger" e quando iniciar nosso servidor passamos a opção "debugger".
+
+109
+00:09:10,173 --> 00:09:15,374
+Agora tentamos se submeter nosso comentário novamente, o browser irá esperar por que estará esperando pelo debugger.
+
+110
+00:09:15,474 --> 00:09:20,158
+Quando voltamos para nossa linha de comando podemos ver que o debugger está esperando por nós aqui.
+
+111
+00:09:20,258 --> 00:09:25,011
+Podemos ver onde estamos no código, podemos subir na pilha se quisermos,
+
+112
+00:09:26,533 --> 00:09:28,700
+podemos ver variáveis se quisermos,
+
+113
+00:09:30,450 --> 00:09:31,550
+voltar na pilha
+
+114
+00:09:32,700 --> 00:09:36,200
+e até entrar no IRB.
+
+115
+00:09:37,147 --> 00:09:41,288
+Isso nos permitirá inserir qualquer código ruby,
+
+116
+00:09:42,542 --> 00:09:44,984
+então podemos ver nossa variável "comment",
+
+117
+00:09:45,305 --> 00:09:47,156
+podemos checar se é um registro novo,
+
+118
+00:09:48,056 --> 00:09:52,062
+e atualmente é um registro novo então não está sendo salvo no banco de dados,
+
+119
+00:09:52,312 --> 00:09:53,212
+vamos tentar salva-lo,
+
+120
+00:09:53,962 --> 00:09:55,562
+e continuar daqui.
+
+121
+00:09:58,424 --> 00:10:03,625
+De volta ao browser vemos que a página terminou de carregou por que liberamos nosso debugger,
+
+122
+00:10:03,875 --> 00:10:14,275
+e nosso comentário está aparecendo aqui por que mudamos o comportamento em tempo de execução e salvamos nosso comentário.
+
+123
+00:10:14,725 --> 00:10:17,725
+Então sabemos que nosso comentário não está sendo salvo aqui mas por que?
+
+124
+00:10:17,975 --> 00:10:23,175
+Parece que esse método "build" so constroi nosso comentário em memória, ele não salva no banco de dados,
+
+125
+00:10:23,225 --> 00:10:25,325
+para salvar temos que chamar "create".
+
+126
+00:10:25,575 --> 00:10:29,475
+isso vai adicionar nosso comentário ao post e salva-lo no banco de dados.
+
+127
+00:10:30,125 --> 00:10:31,825
+Vamos tentar mais uma vez.
+
+128
+00:10:33,175 --> 00:10:38,275
+Tento submeter nosso comentário. Aí está, tudo funcionando corretamente sem o uso do debugger.
 

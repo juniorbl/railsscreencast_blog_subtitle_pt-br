@@ -510,3 +510,111 @@ Vamos tentar mais uma vez.
 00:10:33,175 --> 00:10:38,275
 Tento submeter nosso comentário. Aí está, tudo funcionando corretamente sem o uso do debugger.
 
+129
+00:10:38,525 --> 00:10:42,025
+Agora digamos que queremos adicionar AJAX aqui quando submetemos nosso comentário,
+
+130
+00:10:42,275 --> 00:10:46,175
+em vez de recarregar a página, ele vai submeter o comentário
+
+131
+00:10:46,425 --> 00:10:52,125
+por baixo dos panos usando javascript e atualizar os elementos da página instantaneamente.
+
+132
+00:10:52,275 --> 00:10:54,175
+Rails faz isso ficar muito fácil.
+
+133
+00:10:54,825 --> 00:10:59,125
+O primeiro passo é incluir os arquivos de javascript necessários ao nosso arquivo de layout.
+
+134
+00:11:00,275 --> 00:11:03,175
+Faço isso com a tag javascript, "all" pra carregar tudo.
+
+135
+00:11:03,425 --> 00:11:07,225
+Próximo passo é mudar nosso formulário de comentário para nossos dados irem via AJAX.
+
+136
+00:11:07,475 --> 00:11:12,175
+É muito simples, é so mudar "form_for" para "remote_form_for".
+
+137
+00:11:12,425 --> 00:11:18,225
+E finalmente temos que mudar nosso controller de Comentario para ele responder para javascript.
+
+138
+00:11:18,875 --> 00:11:21,275
+Podemos fazer isso com um bloco de código "respond_to".
+
+139
+00:11:24,225 --> 00:11:30,025
+e novamente aqui queremos reponder para HTML e redirecionar se for uma requisição HTML simples.
+
+140
+00:11:30,775 --> 00:11:33,475
+Se for javascript nós queremos exibir um template.
+
+141
+00:11:33,925 --> 00:11:36,925
+Podemos fazer isso adicionando um novo template em views/comments.
+
+142
+00:11:37,375 --> 00:11:41,675
+Esse se chamará "create.js" por que queremos responder para javascript
+
+143
+00:11:41,925 --> 00:11:45,425
+e ".rjs" pois ele usará RJS para exibir o template.
+
+144
+00:11:45,675 --> 00:11:51,075
+Esse é um modo que Rails fornece para gerar javascript usando Ruby.
+
+145
+00:11:51,725 --> 00:11:56,225
+Aqui nós queremos fazer 3 coisas: queremos inserir nosso comentário,
+
+146
+00:11:56,475 --> 00:11:58,275
+na DIV "comments",
+
+147
+00:11:58,725 --> 00:12:01,025
+queremos faze-lo "piscar",
+
+148
+00:12:02,075 --> 00:12:04,975
+e apagar nosso formulário de comentário.
+
+149
+00:12:05,525 --> 00:12:07,625
+Agora podemos testar. Vamos submeter um novo comentário,
+
+150
+00:12:11,275 --> 00:12:18,675
+E aí está. Ele inseriu o comentário, fez ele piscar e limpou o formulário, tudo sem recarregar a página usando AJAX.
+
+151
+00:12:19,025 --> 00:12:23,925
+Mas o que acontece se o usuário não tem javascript habilitado no browser? Vamos testar.
+
+152
+00:12:24,375 --> 00:12:25,975
+Vamos recarregar a página
+
+153
+00:12:26,625 --> 00:12:28,425
+e tentar submeter o formulário.
+
+154
+00:12:32,475 --> 00:12:42,975
+Funcionou, ele recarregou a página, de volta ao velho formato HTML onde ele recarrega a página quando submetemos um comentário.
+
+155
+00:12:43,225 --> 00:12:45,725
+Então ele funciona com ou sem javascript habilitado.
+
